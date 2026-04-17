@@ -13,27 +13,25 @@
 %   3. Open a GitHub Issue to discuss with developers
 %   4. If you don't know how to use GitHub, you can send me an email
 
-\documentclass[
+\documentclass
+[
     % Debugging Settings
     PrintFilePath   = false,            % print tex file path for each page
     % Layout Settings
     TwoSide         = true,             % set to false if don't need empty pages
-    TrueBlankPage   = false,            % 设置为真将使得空白页不再拥有页眉页脚和页号
     % Thesis Info
-    ClassNumber     = 按中国图书分类法，学位办网上可查,          % 按中国图书分类法，学位办网上可查
-    Security        = 注明密级与保密期限,              % 注明密级与保密期限，仅限于论文课题来源于国防军工项目，如没有请填：无
-    StudentName     = 姓名,
-    StudentID       = 学号,
-    AdvisorName     = 指导教师,
-    Grade           = 2014,            % only the year, no '级'
-    Major           = 专业,
-    Department      = 学院,
-    SubmitDate      = 递交日期,
-    MajorFormat     = general,
-    Degree          = undergraduate,   % 'undergraduate' or 'graduate'
-    Type            = thesis,          % 'thesis'   or 'design'
+    StudentName     = 闫伟达,
+    StudentID       = 22060929,
+    AdvisorName     = 郑能干,
+    Grade           = 2020,            % only the year, no '级'
+    Major           = 计算机技术,
+    Department      = 工程师学院,
+    SubmitDate      = 2023/9/1,
+    MajorFormat     = cs,
+    Degree          = graduate,   % 'undergraduate' or 'graduate'
+    Type            = design,          % 'thesis'   or 'design'
     Period          = final,           % 'proposal' or 'paper' or 'final'
-    BlindReview     = false,           % 'false'    or 'true'
+    BlindReview     = true,           % 'false'    or 'true'
     Language        = chinese,         % 'chinese'  or 'english'
     % Graduate Thesis Info
     GradLevel       = master,          % 'master' or 'doctor'
@@ -45,18 +43,14 @@
     ListOfTables    = true,
     ListOfAlgorithms= false,
     % Title
-    Title           = 毕业论文/设计题目,
-    TitleEng        = {{Graduation Thesis Title}}
-]{zjuthesis}
+    Title           = 面向动物机器人实验的地面站-边缘端协同控制架构研究,
+    TitleEng        = {{}}
+]
+{zjuthesis}
 
 %% Uncomment the following lines if you need multi line titles on cover pages
 % \titletwolines{毕业论文题目第一行}{毕业论文题目第二行}
 % \titleengtwolines{English Title Line One}{English Title Line Two}
-% \titlethreelines{毕业论文题目第一行}{毕业论文题目第二行}{毕业论文题目第三行}
-% \titleengthreelines{English Title Line One}{English Title Line Two}{English Title Line Three}
-
-%% Uncomment the following lines if you need multi line major names on cover pages
-% \majortwolines{专业名第一行}{专业名第二行}
 
 %% Uncomment the following lines if you need multi line department names on cover pages
 % \departmenttwolines{学院名第一行}{学院名第二行}
@@ -79,8 +73,6 @@
 
         \bodystyle
         \inputpage{final}{cover-part}
-
-        \resetpagecounter{}
         \inputbody{final/content}
         \inputbody{final/post}
 
@@ -168,6 +160,17 @@
     \inputbody{post}
 }
 
+% \newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+
+% 定义第四级标题
+% \usepackage{titlesec}
+
+% \titleformat{\paragraph}
+% {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+
+% \setcounter{secnumdepth}{4} % 数字深度设置为4，显示到四级标题
+% \renewcommand{\theparagraph}{\thesubsubsection.\arabic{paragraph}}
+
 \begin{document}
 
 \ifthenelse{\equal{\Degree}{undergraduate}}
@@ -177,4 +180,9 @@
 {
     \inputgraduate{}
 }
+
+% \bibliographystyle{plain}
+% \bibliography{ref}
+
+
 \end{document}
